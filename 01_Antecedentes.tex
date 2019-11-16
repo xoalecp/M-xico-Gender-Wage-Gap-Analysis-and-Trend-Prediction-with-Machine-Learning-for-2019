@@ -1,0 +1,20 @@
+\newpage
+\section{Antecedentes}
+\label{chapter2}
+\textit{}
+
+The energy calculation for life cycle inventory is basically similar for all the production processes. The consumed energy of a machine can be split up in to three parts according to Abele et al.\cite{Abele2005}.
+\begin{itemize}  
+\item $E_{th}$, the active energy 
+\item $E_{additional}$, the additional energy requirement of the machine 
+\item $E_{periphery}$, the energy demand of the process-periphery 
+\end{itemize}
+
+The active energy $E_{th}$ incorporates the theoretical energy needed to perform the change of shape. It represents the minimum energy consumption of a machine. 
+
+The transformation energy is only a fraction of the total energy used by the machine. Additional energy is calculated with equation \ref{eq:Eadditional}. It includes the basic power $P_{basic}$ and the average idle power $P_{idle}$ with respectively the basic time $t_{b}$and the work-piece utilization time $t_{U}$.
+
+\begin{equation} \label{eq:Eadditional}
+E_{additional} = P_{idle} \cdot t_b + P_{basic} \cdot (t_{U} - t_{b})
+\end{equation}
+
