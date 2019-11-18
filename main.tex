@@ -27,12 +27,12 @@
 \usepackage[]{hyperref}  %link collor
 
 %talbe layout to the right
-%\usepackage[labelfont=bf]{caption}
-%\captionsetup[table]{labelsep=space,justification=raggedright,singlelinecheck=off}
-%\captionsetup[figure]{labelsep=quad}
+\usepackage[labelfont=bf]{caption}
+\captionsetup[table]{labelsep=space,justification=raggedright,singlelinecheck=off}
+\captionsetup[figure]{labelsep=quad}
 
 \usepackage{sectsty} % Allows customizing section commands
-\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\allsectionsfont{\raggedright \normalfont\scshape} % Make all sections centered, the default font and small caps
 
 \usepackage{fancyhdr} % Custom headers and footers
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -80,11 +80,7 @@
 \begin{abstract}
 
 {\noindent{\Large Abstract} }\\
-
-
-
-  \\
-
+ \\
 
 \textbf{Key words:} Machine Learning, Linear Regression, Wage Gender Gap, Wage Forecast
     
@@ -96,28 +92,32 @@
 %----------------------------------------------------------------------------------------
 %	Section 1
 %----------------------------------------------------------------------------------------
-\input{1-Section.tex}
-
+\input{01_Introduction.tex}
 %----------------------------------------------------------------------------------------
 %	Section 2
 %----------------------------------------------------------------------------------------
-\input{2-Section.tex}
-
+\input{02_MarcoTeorico.tex}
 %----------------------------------------------------------------------------------------
 %	Section 3
 %----------------------------------------------------------------------------------------
-\input{3-Section.tex}
-
+\input{03_PlanteamientoProblema.tex}
 %----------------------------------------------------------------------------------------
 %	Section 4
 %----------------------------------------------------------------------------------------
-\input{4-Section.tex}
-
+\input{04_Hipotesis.tex}
 %----------------------------------------------------------------------------------------
 %	Section 5
 %----------------------------------------------------------------------------------------
-\input{5-Section.tex}
+\input{05_Metodologia.tex}
+%----------------------------------------------------------------------------------------
+%	Section 6
+%----------------------------------------------------------------------------------------
+\input{06_Resultados.tex}
 
+%----------------------------------------------------------------------------------------
+%	Section 7
+%----------------------------------------------------------------------------------------
+\input{07_Conclusiones.tex}
 
 %bibliography
 \newpage
