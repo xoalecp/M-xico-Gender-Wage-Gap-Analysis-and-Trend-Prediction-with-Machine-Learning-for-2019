@@ -187,13 +187,31 @@ Dentro de las ventajas de este algoritmo se encuentran:
 Los sobreajustes son muy comunes en estos modelos y al usar variables continuas, se tiene por sobre entendido que se perder\'a precisi\'on.
 
 \subsubsection{Random Forest Regressor}
-
+El algoritmo de random Forest es una combinaci\'on de \'arboles predictores \begin{equation}
+    h\left ( x;\ \Theta _{k} \right ), k=1, ..., K
+\end{equation} 
+de tal manera que cada \'arbol depende en de los valores de un vector aleatorio muestreado de manera independiente u con la misma distribuci\'on para todos los arboles dentro del bosque \cite{breiman2001random}
 
 \subsubsection{XGBoost}
 Es muy parecido al modelo Random Forest, pero esta vez los \'arboles tienen asociadas una funci\'on de p\'erdidas que tienen que minimizar (o maximizar) para conseguir los mejores resultados (por ello la palabra Boosting).
 Est\'a basado o es muy parecido al \'arbol de decisi\'on y es una evoluci\'on entre la clasificaci\'on y la regresi\'on  este se basa en impulsar  para maximizar o minimizar la funci\'on de p\'erdidas trabaja sobre bases de datos de gran tamaño as\'i como m\'ultiples variables algo importante es que admite missing values  por lo mencionado anteriormente se debe tener en cuenta el equipo para  correr bases de datos extensas y usar muchas variables, es recomendable saber las variables que m\'as aportan al algoritmo.
 
-Este clasifica o pron\'ostica sobre la variable objetivo, utiliza un set de datos utilizando los los \'arboles de decisiones para potencializar los resultados en base a un procesamiento secuencial y con una funci\'on de p\'erdida  que minimiza el error en consecuencia es un pronosticador fuerte. Como en todo algoritmo se deben ajustar los par\'ametros para obtener un m\'inimo error de precisi\'on
+Este clasifica o pron\'ostica sobre la variable objetivo, utiliza un set de datos utilizando los los \'arboles de decisiones para potencializar los resultados en base a un procesamiento secuencial y con una funci\'on de p\'erdida  que minimiza el error en consecuencia es un pronosticador fuerte. Como en todo algoritmo se deben ajustar los par\'ametros para obtener un m\'inimo error de precisi\'on.
+
+\subsubsection{Naive Bayes}
+Este algoritmo es del tipo clasificador Se basan en una t\'ecnica de clasificaci\'on estadística llamada teorema de Bayes, este algoritmo asume que las variables predictorias son independientes entre si, eso quiere decir que los conjuntos de datos pueden no tener relacion entre ellos.
+
+El clasificador Naive Bayes agregar informaci\'on usando probabilidad condicional con una asunci\'on de independencia entre caracteristicas , este algoritmo esta dentro de la rama de algoritmos supervisados.
+
+Bayes: asume que la presencia de una caracteristica en la clase no esta relacionada a ninguna otra caracteristica.
+Naive: las propiedades independientes contribuyen al calculo de la propiedad particular.
+
+\subsubsection{SUPPORT VECTOR MACHINES}
+
+Las m\'aquinas de vectores soporte (SVM, del ingl\'es Support Vector Machines)tienen su origen en los trabajos sobre la teor\'ia del aprendizaje estad\'istico y fueron introducidas en los años 90 por Vapnik y sus colaboradores. Aunque originariamente las SVMs fueron pensadas para resolver problemas de clasificaci\'on binaria, actualmente se utilizan para resolver diversos tipos de problemas, por ejemplo, la regresi\'on. Desde su introducci\'on, han ido ganando un merecido reconocimiento gracias a sus s\'olidos fundamentos te\'oricos.
+
+La idea es seleccionar un hiperplano de separaci\'on que equidiste de los ejemplos m\'as cercanos de cada clase para, de esta forma, conseguir lo que se denomina un margen m\'aximo a cada lado del hiperplano. Adem\'as, a la hora de definir el hiperplano, s\'olo se consideran los ejemplos de entrenamiento que distan del hiperplano la distancia margen. Estos ejemplos reciben el nombre de vectores soporte.
+
 
 
 \subsection{Delimitaciones}
