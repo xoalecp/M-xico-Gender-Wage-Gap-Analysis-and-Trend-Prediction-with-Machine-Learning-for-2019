@@ -97,7 +97,7 @@ Campo Salario ( ver figura \ref{fig:wageUnique_Standarization})
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\linewidth]{Figure/wageUnique_Standarization.JPG}
-	\caption{Valores que se limpiaron del dataset a trav\'es de la eliminaci\on de sus respectivas las filas}
+	\caption{Valores que se limpiaron del dataset a trav\'es de la eliminaci\'on de sus respectivas las filas}
 	\label{fig:wageUnique_Standarization}
 \end{figure}
 
@@ -128,7 +128,7 @@ Despues de estandarizar los datos
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figure/AGSIncrementsVSyear_visualizacion.JPG}
-	\caption{Incremento en funcion del año usando un subconjunto de datos aleatorio} 
+	\caption{Incremento en funcion del a\~no usando un subconjunto de datos aleatorio} 
 	\label{fig:AGSIncrementsVSyear}
 \end{figure}
 
@@ -148,31 +148,9 @@ Son estas correlaciones indirectas las que la funci\'on de autocorrelaci\'on par
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figure/Data_PartialAutocorrelation.JPG}
-	\caption{Lag level per group} 
+	\caption{Resagos por grupo} 
 	\label{fig:LagLevel}
 \end{figure}
-
-\subsubsection{Generaci\'on del dataset de entrenamiento}
-%%---------------------- Reempleazar
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-%%---------------------
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=0.8\linewidth]{Figure/Data_TrainingDataset.JPG}
-	\caption{Lag level per group} 
-	\label{fig:InitialData}
-\end{figure}
-
-%%---------------------- Reempleazar
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-%%---------------------
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width=1\linewidth]{Figure/DataSet_TrainingDataset.JPG}
-	\caption{Lag level per group} 
-	\label{fig:TrainingDataSet}
-\end{figure}
-
 
 \subsection{Descripci\'on del Modelo a Utilizar}
 
@@ -187,10 +165,16 @@ Dentro de las ventajas de este algoritmo se encuentran:
 Los sobreajustes son muy comunes en estos modelos y al usar variables continuas, se tiene por sobre entendido que se perder\'a precisi\'on.
 
 \subsubsection{Random Forest Regressor}
-El algoritmo de random Forest es una combinaci\'on de \'arboles predictores \begin{equation}
-    h\left ( x;\ \Theta _{k} \right ), k=1, ..., K
-\end{equation} 
-de tal manera que cada \'arbol depende en de los valores de un vector aleatorio muestreado de manera independiente u con la misma distribuci\'on para todos los arboles dentro del bosque \cite{breiman2001random}
+Ramdom Forest Regressor es una t\'ecnica de embolsado y no una t\'ecnica de refuerzo. Los \'arboles en bosques aleatorios se ejecutan en paralelo. No hay interacci\'on entre estos \'arboles mientras se construyen los \'arboles.
+Funciona mediante la construcci\'on de una multitud de \'arboles de decisi\'on en el momento del entrenamiento y la salida de la clase que es el modo de las clases (clasificaci\'on) o predicci\'on media (regresi\'on) de los \'arboles individuales.
+Un bosque aleatorio es un metaestimulador (es decir, combina el resultado de m\'ultiples predicciones) que agrega muchos \'arboles de decisi\'on, con algunas modificaciones \'utiles:
+
+\begin{itemize}
+    \item El n\'umero de caracter\'isticas que se pueden dividir en cada nodo est\'a limitado a un porcentaje del total (que se conoce como hiperpar\'ametro). Esto garantiza que el modelo de conjunto no dependa demasiado de ninguna caracter\'istica individual y hace un uso justo de todas las caracter\'isticas potencialmente predictivas.
+    \item Cada \'arbol extrae una muestra aleatoria del conjunto de datos original al generar sus divisiones, agregando un elemento adicional de aleatoriedad que evita el sobreajuste.
+\end{itemize}
+
+Las modificaciones anteriores ayudan a evitar que los \'arboles est\'en demasiado correlacionados. \cite{breiman2001random}
 
 \subsubsection{XGBoost}
 Es muy parecido al modelo Random Forest, pero esta vez los \'arboles tienen asociadas una funci\'on de p\'erdidas que tienen que minimizar (o maximizar) para conseguir los mejores resultados (por ello la palabra Boosting).
@@ -199,7 +183,7 @@ Est\'a basado o es muy parecido al \'arbol de decisi\'on y es una evoluci\'on en
 Este clasifica o pron\'ostica sobre la variable objetivo, utiliza un set de datos utilizando los los \'arboles de decisiones para potencializar los resultados en base a un procesamiento secuencial y con una funci\'on de p\'erdida  que minimiza el error en consecuencia es un pronosticador fuerte. Como en todo algoritmo se deben ajustar los par\'ametros para obtener un m\'inimo error de precisi\'on.
 
 \subsubsection{Naive Bayes}
-Este algoritmo es del tipo clasificador Se basan en una t\'ecnica de clasificaci\'on estadística llamada teorema de Bayes, este algoritmo asume que las variables predictorias son independientes entre si, eso quiere decir que los conjuntos de datos pueden no tener relacion entre ellos.
+Este algoritmo es del tipo clasificador Se basan en una t\'ecnica de clasificaci\'on estad\'istica llamada teorema de Bayes, este algoritmo asume que las variables predictorias son independientes entre si, eso quiere decir que los conjuntos de datos pueden no tener relacion entre ellos.
 
 El clasificador Naive Bayes agregar informaci\'on usando probabilidad condicional con una asunci\'on de independencia entre caracteristicas , este algoritmo esta dentro de la rama de algoritmos supervisados.
 
